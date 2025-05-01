@@ -1,14 +1,10 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <HelloWorld msg="Vite + Vue" />
-  <div class="text-3xl text-blue-600 font-bold">
-    Tailwind Test
-  </div>
+  <Navbar />
+  <router-view />
+  <Footer />
 </template>
-
-<style scoped>
-
-</style>
+<script setup>
+import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
+</script>
+<style scoped></style>
