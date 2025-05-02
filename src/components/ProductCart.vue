@@ -14,7 +14,7 @@
         <!-- Product Info -->
         <div class="mt-4">
           <h3 class="text-sm font-medium text-gray-700 hover:text-blue-600 line-clamp-2">
-            <a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
+            <router-link to="/product/1">Fujifilm X100T 16 MP Digital Camera (Silver)</router-link>
           </h3>
           <div class="mt-2 text-lg font-semibold text-gray-900">
             $520.00 <span class="text-sm line-through text-gray-500 ml-2">$590.00</span>

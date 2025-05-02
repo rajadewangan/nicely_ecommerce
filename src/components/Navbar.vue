@@ -1,5 +1,5 @@
 <template>
-    <header class=" fixed w-full bg-white shadow z-50">
+    <header class=" w-full bg-white shadow z-50">
         <div class="container mx-auto px-2 py-4 flex justify-between items-center">
 
             <!-- Logo -->
@@ -33,9 +33,9 @@
                     <i class="fa fa-user"></i>
                 </a>
                 <div class="relative">
-                    <a href="#" class="text-gray-600 hover:text-blue-600">
+                    <router-link to="/cart" class="text-gray-600 hover:text-blue-600">
                         <i class="fa fa-shopping-cart"></i>
-                    </a>
+                    </router-link>
                     <span
                         class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                         2
