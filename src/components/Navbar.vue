@@ -12,7 +12,7 @@
             <!-- Navigation Links -->
             <nav class="hidden md:flex space-x-6 text-sm font-medium">
                 <router-link to="/" class="text-gray-700 hover:text-blue-600">Home</router-link>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Shop</a>
+                <router-link to="/category/category" class="text-gray-700 hover:text-blue-600">Category</router-link>
                 <a href="#" class="text-gray-700 hover:text-blue-600">Promotion</a>
                 <a href="#" class="text-gray-700 hover:text-blue-600">Pages</a>
                 <a href="#" class="text-gray-700 hover:text-blue-600">Blog</a>
@@ -24,14 +24,18 @@
                 <div class="relative w-full max-w-xs">
                     <input type="text" placeholder="Search..."
                         class="w-full pl-10 pr-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    <button class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 hover:text-blue-600">
-                        <i class="fa fa-search"></i>
-                    </button>
+                    <router-link to="/search">
+                        <button
+                            class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 hover:text-blue-600">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </router-link>
+
                 </div>
 
-                <a href="#" class="text-gray-600 hover:text-blue-600">
+                <router-link to="/login" class="text-gray-600 hover:text-blue-600">
                     <i class="fa fa-user"></i>
-                </a>
+                </router-link>
                 <div class="relative">
                     <router-link to="/cart" class="text-gray-600 hover:text-blue-600">
                         <i class="fa fa-shopping-cart"></i>

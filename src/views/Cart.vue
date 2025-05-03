@@ -3,7 +3,6 @@
             <div class="w-full z-10 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700" id="checkout">
                 <div class="flex items-end lg:flex-row flex-col justify-start" id="cart">
                     <div class="lg:w-[70%] md:w-8/12 w-full lg:px-8 lg:py-2 md:px-6 px-4 md:py-2 py-2 bg-white overflow-y-auto overflow-x-hidden lg:h-screen h-auto" id="scroll">
-                        <p class="lg:text-4xl text-3xl font-black leading-10 text-gray-800 pt-3">Bag</p>
                         <div class="md:flex items-strech py-8 md:py-10 lg:py-8 border-t border-gray-50">
                             <div class="md:w-4/12 2xl:w-1/4 w-full">
                                 <img src="https://i.ibb.co/SX762kX/Rectangle-36-1.png" alt="Black Leather Bag" class="h-full object-center object-cover md:block hidden" />
@@ -108,7 +107,7 @@
                                     <p class="text-2xl leading-normal text-gray-800">Total</p>
                                     <p class="text-2xl font-bold leading-normal text-right text-gray-800">$10,240</p>
                                 </div>
-                                <button onclick="checkoutHandler1(true)" class="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white">Checkout</button>
+                                <button onclick="checkoutHandler1(true)" class="text-base leading-none w-full py-5  border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white" style="background-color: rgb(239, 68, 68);">Checkout</button>
                             </div>
                         </div>
                     </div>
