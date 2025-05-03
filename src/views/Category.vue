@@ -19,79 +19,64 @@
             </div>
         </div>
     </div>
-    <Product :products="products" />
-    <Slider heading="New Arrivals" />
-    <Slider heading="Top Rated" />
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-2">
+        <div class="col-span-1" v-for="(product, index) in categoryProducts" :key="product.id">
+            <Product :products="[product]" />
+        </div>
+    </div>
+    <!-- <Slider heading="New Arrivals" />
+    <Slider heading="Top Rated" /> -->
+
+    <!-- new arrivals  -->
+    <div>
+        <div class="text-center mt-2">
+            <router-link to="/search"
+                class="text-4xl font-bold mb-6 text-center border-b-4 border-gray-300 pb-2 inline-block"
+                style="border-color: rgb(239, 68, 68);">New Arrivals</router-link>
+        </div>
+        <Swiper :slides-per-view="'auto'" :space-between="3" :breakpoints="{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 3 }
+        }" loop class="w-full">
+            <SwiperSlide v-for="(product, index) in newCategoryProducts" :key="product.id">
+                <div class="cursor-pointer px-4 py-2 text-center bg-white text-gray-800 shadow mx-auto w-full ">
+                    <Product :products="[product]" />
+                </div>
+            </SwiperSlide>
+        </Swiper>
+    </div>
 
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex/dist/vuex.cjs.js';
 import Product from '../components/Product.vue';
 import Slider from '../components/Slider.vue';
-
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
 
 export default {
     name: "Category",
     components: {
         Product,
         Slider,
+        Swiper,
+        SwiperSlide,
+    },
+    computed: {
+        ...mapGetters('category', ['categoryProducts', 'newCategoryProducts', 'isLoading', 'error'])
+    },
+    created() {
+        const category = this.$route.params.category;
+        this.fetchCategoryproducts(category).then(() => this.fetchNewCategoryProducts())
+
+    },
+    methods: {
+        ...mapActions('category', ['fetchCategoryproducts', 'fetchNewCategoryProducts']),
     },
     data() {
         return {
-            products: [{
-                id: 1,
-                title: "Essence Mascara Lash Princess",
-                description: "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
-                category: "beauty",
-                price: 9.99,
-                discountPercentage: 7.17,
-                rating: 4.94,
-                stock: 5,
-                tags: ["beauty", "mascara"],
-                brand: "Essence",
-                sku: "RCH45Q1A",
-                weight: 2,
-                dimensions: {
-                    width: 23.17,
-                    height: 14.43,
-                    depth: 28.01,
-                },
-                warrantyInformation: "1 month warranty",
-                shippingInformation: "Ships in 1 month",
-                availabilityStatus: "Low Stock",
-                reviews: [
-                    {
-                        rating: 2,
-                        comment: "Very unhappy with my purchase!",
-                        date: "2024-05-23T08:56:21.618Z",
-                        reviewerName: "John Doe",
-                        reviewerEmail: "john.doe@x.dummyjson.com",
-                    },
-                    {
-                        rating: 2,
-                        comment: "Not as described!",
-                        date: "2024-05-23T08:56:21.618Z",
-                        reviewerName: "Nolan Gonzalez",
-                        reviewerEmail: "nolan.gonzalez@x.dummyjson.com",
-                    },
-                    {
-                        rating: 5,
-                        comment: "Very satisfied!",
-                        date: "2024-05-23T08:56:21.618Z",
-                        reviewerName: "Scarlett Wright",
-                        reviewerEmail: "scarlett.wright@x.dummyjson.com",
-                    },
-                ],
-                returnPolicy: "30 days return policy",
-                minimumOrderQuantity: 24,
-                meta: {
-                    createdAt: "2024-05-23T08:56:21.618Z",
-                    updatedAt: "2024-05-23T08:56:21.618Z",
-                    barcode: "9164035109868",
-                    qrCode: "...",
-                },
-                thumbnail: "...",
-                images: ["...", "...", "..."],
-            }]
+
         }
     }
 }</script>

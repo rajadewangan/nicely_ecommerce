@@ -20,11 +20,50 @@
     </div>
 
     <!-- best seller -->
-    <Slider heading="Best Sellers" />
+    <!-- <Slider heading="Best Sellers" /> -->
+    <div>
+
+        <div class="text-center mt-2">
+            <router-link to="/search"
+                class="text-4xl font-bold mb-6 text-center border-b-4 border-gray-300 pb-2 inline-block"
+                style="border-color: rgb(239, 68, 68);">Most Selling Products</router-link>
+        </div>
+        <Swiper :slides-per-view="'auto'" :space-between="5" :breakpoints="{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 3 }
+        }" loop class="w-full">
+            <SwiperSlide v-for="(product, index) in mostBoughtProducts" :key="product.id">
+                <div class="cursor-pointer px-4 py-2 text-center bg-white text-gray-800 shadow mx-auto w-full ">
+                    <Product :products="[product]" />
+                </div>
+            </SwiperSlide>
+        </Swiper>
+    </div>
     <!-- end of best seller  -->
     <!-- new Arrivals -->
-    <Slider heading="New Arrivals" />
+    <!-- <Slider heading="New Arrivals" /> -->
     <!-- end of new arrivals  -->
+
+    <!-- category wise products  -->
+    <div class="mb-2">
+        <div class="text-center mt-2">
+            <h3 to="/search" class="text-4xl font-bold mb-6 text-center border-b-4 border-gray-300 pb-2 inline-block"
+                style="border-color: rgb(239, 68, 68);">Categories</h3>
+        </div>
+        <Swiper :slides-per-view="'auto'" :space-between="0" :breakpoints="{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 5 }
+        }" loop class="w-full">
+            <SwiperSlide v-for="(category, index) in categoryList" :key="index">
+                <div
+                    class="cursor-pointer px-4 py-2 text-center bg-white text-gray-800 shadow mx-auto w-fit border border-black font-bold">
+                    {{ category }}
+                </div>
+            </SwiperSlide>
+        </Swiper>
+    </div>
 
     <!-- deal of the day section  -->
     <div class="deal_ofthe_week" style="background-color: rgb(162 163 163 / 40%);">
@@ -71,12 +110,52 @@
         </div>
     </div>
     <!-- end of deal of the dat  -->
-         <!-- all products  -->
-    <Slider heading="All Products" />
+    <!-- all products  -->
+    <!-- <Slider heading="All Products" /> -->
+    <div class="text-center mt-2">
+        <router-link to="/search"
+            class="text-4xl font-bold mb-6 text-center border-b-4 border-gray-300 pb-2 inline-block"
+            style="border-color: rgb(239, 68, 68);">All Products</router-link>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="col-span-1" v-for="(product, index) in allProducts" :key="product.id">
+            <Product :products="[product]" />
+        </div>
+    </div>
+
+
     <!-- end of all products  -->
 </template>
 
 
-<script setup>
+<script>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+import { mapActions, mapGetters } from 'vuex/dist/vuex.cjs.js';
 import Slider from '../components/Slider.vue'
+import Product from '../components/Product.vue';
+import products from '../store/modules/products';
+import ProductCart from '../components/ProductCart.vue';
+export default {
+    name: "Home",
+    computed: {
+        ...mapGetters('products', ['allProducts', 'mostBoughtProducts', 'isLoading', 'error']),
+        ...mapGetters('category', ['categoryList', 'isLoading', 'error'])
+    },
+    created() {
+        this.fetchProducts()
+        this.fetchMostBoughtProducts()
+        this.fetchAllCategory()
+    },
+    methods: {
+        ...mapActions('products', ['fetchProducts', 'fetchMostBoughtProducts']),
+        ...mapActions('category', ['fetchAllCategory']),
+    },
+    components: {
+        Slider,
+        Product,
+        Swiper,
+        SwiperSlide,
+    }
+}
 </script>

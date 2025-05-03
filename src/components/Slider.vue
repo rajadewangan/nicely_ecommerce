@@ -30,7 +30,7 @@
     <!-- end of best seller -->
   </template>
   
-  <script setup>
+  <script>
   import { Swiper, SwiperSlide } from 'swiper/vue'
   import 'swiper/css'
   import 'swiper/css/navigation'
@@ -39,11 +39,16 @@
   import ProductCart from './ProductCart.vue'
   SwiperCore.use([Navigation, Autoplay])
 
-
-  const props = defineProps({
+export default{
+  name:"Slider",
+  props:{
     heading:{
         type:String,
     }
-  })
+  },
+  components:{
+    ProductCart,
+  }
+}
   </script>
   
