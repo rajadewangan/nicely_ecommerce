@@ -2,8 +2,8 @@
 
     <!-- Product Details -->
     <div class="space-y-4">
-        <h1 class="text-2xl font-bold">Essence Mascara Lash Princess</h1>
-        <p class="text-gray-600 text-sm">Brand: <span class="text-black">Essence</span></p>
+        <h1 class="text-2xl font-bold">{{product.title}}</h1>
+        <p class="text-gray-600 text-sm">Brand: <span class="text-black">{{product.brand}}</span></p>
 
         <!-- Rating -->
         <div class="flex items-center gap-2 text-yellow-500">
@@ -80,9 +80,9 @@
         </ul>
         <div>
             <label for="quantity" class="mr-2 font-medium">Qty:</label>
-            <select id="quantity" v-model="quantity"
+            <select id="quantity" 
                 class="border border-gray-300 rounded px-2 py-1 focus:outline-none">
-                <option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
+                <option v-for="n in 10" :key="n" :value="product.minimumOrderQuantity + n -1">{{ product.minimumOrderQuantity + n - 1 }}</option>
             </select>
             <!-- Actions -->
             <button

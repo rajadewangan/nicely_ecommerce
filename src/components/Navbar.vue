@@ -5,7 +5,7 @@
             <!-- Logo -->
             <div class="text-2xl font-bold text-gray-800">
                 <router-link to="/" class="hover:text-blue-600">
-                    colo<span class="text-blue-500">shop</span>
+                    Nicely<span class="text-blue-500">Commerce</span>
                 </router-link>
             </div>
 
@@ -22,14 +22,25 @@
             <!-- Icons -->
             <div class="flex items-center space-x-4">
                 <div class="relative w-full max-w-xs">
-                    <input type="text" placeholder="Search..."
+                    <input v-model="searchKeyword" @keyup.enter="search" type="text" placeholder="Search..."
                         class="w-full pl-10 pr-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    <router-link to="/search">
-                        <button
-                            class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 hover:text-blue-600">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </router-link>
+                    <button @click="search"
+                        class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 hover:text-blue-600">
+                        <i class="fa fa-search"></i>
+                    </button>
+
+                    <!-- suggestions dropdown  -->
+                    <div class="absolute left-0 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-1 z-10"
+                        v-if="searchKeyword.length > 1 && searchSuggestions.length">
+                        <ul>
+                            <li v-for="(suggestion, index) in searchSuggestions" :key="index"
+                                @click="searchKeyword =suggestion.title; search()"
+                                class="cursor-pointer px-4 py-2 hover:bg-blue-100">
+                                {{ suggestion.title }}
+                            </li>
+                        </ul>
+
+                    </div>
 
                 </div>
 
@@ -67,11 +78,43 @@
     </header>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-const isOpen = ref(false)
-const toggleMenu = () => {
-    isOpen.value = !isOpen.value
+<script>
+import { debounce } from 'lodash';
+import { mapActions, mapGetters } from 'vuex/dist/vuex.cjs.js';
+
+export default {
+    name: "Navbar",
+    data() {
+        return {
+            searchKeyword: '',
+            debouncefetch: null,
+        }
+    },
+    computed: {
+        ...mapGetters('search', ['searchSuggestions']),
+
+    },
+    created() {
+        this.debouncefetch = debounce(this.fetchSearchSuggestions, 300);
+    },
+    watch: {
+        searchKeyword(newVal) {
+            if (newVal.length >= 2) {
+                this.debouncefetch(newVal);
+            }
+        }
+    },
+    methods: {
+        ...mapActions('search', ['fetchSearchSuggestions','clearSuggestions']),
+       async search() {
+            if (this.searchKeyword.trim()) {
+                this.clearSuggestions();
+                await this.$router.push(`/search/${this.searchKeyword}`);
+                this.searchKeyword = ''
+            }
+        }
+    }
+
 }
 </script>
 

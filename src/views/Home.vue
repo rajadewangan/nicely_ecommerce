@@ -51,18 +51,34 @@
             <h3 to="/search" class="text-4xl font-bold mb-6 text-center border-b-4 border-gray-300 pb-2 inline-block"
                 style="border-color: rgb(239, 68, 68);">Categories</h3>
         </div>
-        <Swiper :slides-per-view="'auto'" :space-between="0" :breakpoints="{
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 5 }
-        }" loop class="w-full">
-            <SwiperSlide v-for="(category, index) in categoryList" :key="index">
-                <div
-                    class="cursor-pointer px-4 py-2 text-center bg-white text-gray-800 shadow mx-auto w-fit border border-black font-bold">
+        <Swiper :slides-per-view="'auto'" :space-between="0" loop class="w-full">
+            <SwiperSlide v-for="(category, index) in categoryList" :key="index" class="!w-auto !p-0">
+                <div @click="activeCategory = category" :class="[
+                    'cursor-pointer px-4 py-2 text-center shadow border font-bold',
+                    activeCategory === category
+                        ? 'bg-red-500 text-white border-red-600'
+                        : 'bg-white text-gray-800 border-black'
+                ]">
                     {{ category }}
                 </div>
             </SwiperSlide>
         </Swiper>
+
+
+        <div class="p-2">
+            <Swiper :slides-per-view="'auto'" :space-between="5" :breakpoints="{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }" loop class="w-full">
+                <SwiperSlide v-for="(product, index) in categoryProducts" :key="product.id">
+                    <div class="cursor-pointer px-4 py-2 text-center bg-white text-gray-800 shadow mx-auto w-full ">
+                        <Product :products="[product]" />
+                    </div>
+                </SwiperSlide>
+            </Swiper>
+        </div>
+        <router-link :to="`/category/${activeCategory}`" class="block text-right font-bold text-primary mx-3 text-2xl hover:underline">View All >></router-link>
     </div>
 
     <!-- deal of the day section  -->
@@ -138,9 +154,14 @@ import products from '../store/modules/products';
 import ProductCart from '../components/ProductCart.vue';
 export default {
     name: "Home",
+    data() {
+        return {
+            activeCategory: '',
+        }
+    },
     computed: {
         ...mapGetters('products', ['allProducts', 'mostBoughtProducts', 'isLoading', 'error']),
-        ...mapGetters('category', ['categoryList', 'isLoading', 'error'])
+        ...mapGetters('category', ['categoryList', 'categoryProducts', 'isLoading', 'error'])
     },
     created() {
         this.fetchProducts()
@@ -149,13 +170,29 @@ export default {
     },
     methods: {
         ...mapActions('products', ['fetchProducts', 'fetchMostBoughtProducts']),
-        ...mapActions('category', ['fetchAllCategory']),
+        ...mapActions('category', ['fetchAllCategory', 'fetchCategoryproducts']),
+
     },
     components: {
         Slider,
         Product,
         Swiper,
         SwiperSlide,
+    },
+    watch: {
+        activeCategory(category) {
+            if (category) {
+                this.fetchCategoryproducts(category, 10);
+            }
+        },
+        categoryList: {
+            immediate: true,
+            handler(newList) {
+                if (newList.length && !this.activeCategory) {
+                    this.activeCategory = newList[0];
+                }
+            }
+        }
     }
 }
 </script>

@@ -7,9 +7,9 @@ import Category from "../views/Category.vue";
 import Login from "../views/Login.vue";
 
 const routes = [{ path: "/", name: "Home", component: Home },
-    {path:'/product/:id',name:"Product",component:Product},
+    {path:'/product/:productId',name:"Product",component:Product},
     {path:'/cart',name:"Cart",component:Cart},
-    {path:'/search',name:"Search",component:Search},
+    {path:'/search/:searchQuery',name:"Search",component:Search},
     {path:'/category/:category',name:"Category",component:Category},
     {path:'/login',name:"Login",component:Login},
 

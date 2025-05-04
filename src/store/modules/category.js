@@ -39,11 +39,11 @@ export default {
         commit('SET_LOADING', false)
       }
     },
-    async fetchCategoryproducts({ commit },category) {
+    async fetchCategoryproducts({ commit },category,limit=0) {
         commit('SET_LOADING', true)
         commit('SET_ERROR', null)
         try {
-          const response = await api.get(`/products/category/${category}`) 
+          const response = await api.get(`/products/category/${category}?limit=${limit}`) 
           commit('SET_CATEGORY_PRODUCTS', response.data.products)
         } catch (error) {
           commit('SET_ERROR', error.message)

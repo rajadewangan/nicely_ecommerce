@@ -26,7 +26,7 @@
                                         <p class="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p>
                                         <p class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">Remove</p>
                                     </div>
-                                    <p class="text-base font-black leading-none text-gray-800">$9,000</p>
+                                    <p class="text-base font-black leading-none text-gray-800">Rs. 9,000</p>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                         <p class="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p>
                                         <p class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">Remove</p>
                                     </div>
-                                    <p class="text-base font-black leading-none text-gray-800">$9,000</p>
+                                    <p class="text-base font-black leading-none text-gray-800">Rs. 9,000</p>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                                         <p class="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p>
                                         <p class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">Remove</p>
                                     </div>
-                                    <p class="text-base font-black leading-none text-gray-800">$9,000</p>
+                                    <p class="text-base font-black leading-none text-gray-800">Rs. 9,000</p>
                                 </div>
                             </div>
                         </div>
@@ -91,21 +91,21 @@
                                 <p class="lg:text-4xl text-3xl font-black leading-9 text-gray-800">Summary</p>
                                 <div class="flex items-center justify-between pt-16">
                                     <p class="text-base leading-none text-gray-800">Subtotal</p>
-                                    <p class="text-base leading-none text-gray-800">$9,000</p>
+                                    <p class="text-base leading-none text-gray-800">Rs. 9,000</p>
                                 </div>
                                 <div class="flex items-center justify-between pt-5">
                                     <p class="text-base leading-none text-gray-800">Shipping</p>
-                                    <p class="text-base leading-none text-gray-800">$30</p>
+                                    <p class="text-base leading-none text-gray-800">Rs. 30</p>
                                 </div>
                                 <div class="flex items-center justify-between pt-5">
                                     <p class="text-base leading-none text-gray-800">Tax</p>
-                                    <p class="text-base leading-none text-gray-800">$35</p>
+                                    <p class="text-base leading-none text-gray-800">Rs. 35</p>
                                 </div>
                             </div>
                             <div>
                                 <div class="flex items-center pb-6 justify-between lg:pt-5 pt-20">
                                     <p class="text-2xl leading-normal text-gray-800">Total</p>
-                                    <p class="text-2xl font-bold leading-normal text-right text-gray-800">$10,240</p>
+                                    <p class="text-2xl font-bold leading-normal text-right text-gray-800">Rs. 10,240</p>
                                 </div>
                                 <button onclick="checkoutHandler1(true)" class="text-base leading-none w-full py-5  border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white" style="background-color: rgb(239, 68, 68);">Checkout</button>
                             </div>

@@ -1,60 +1,77 @@
-import api from '../axios'
+import api from "../axios";
 
 export default {
   namespaced: true,
   state: {
     products: [],
-    mostBoughtProducts:[],
+    mostBoughtProducts: [],
+    product: Object,
     loading: false,
-    error: null
+    error: null,
   },
   mutations: {
     SET_PRODUCTS(state, products) {
-      state.products = products
+      state.products = products;
     },
-    SET_MOST_BOUGHT_PRODUCTS(state,products){
-      state.mostBoughtProducts=products
+    SET_MOST_BOUGHT_PRODUCTS(state, products) {
+      state.mostBoughtProducts = products;
+    },
+    SET_PRODUCT(state, product) {
+      state.product = product;
     },
     SET_LOADING(state, status) {
-      state.loading = status
+      state.loading = status;
     },
     SET_ERROR(state, error) {
-      state.error = error
-    }
+      state.error = error;
+    },
   },
   actions: {
     async fetchProducts({ commit }) {
-      commit('SET_LOADING', true)
-      commit('SET_ERROR', null)
+      commit("SET_LOADING", true);
+      commit("SET_ERROR", null);
       try {
-        const response = await api.get('/products?limit=9') 
-        commit('SET_PRODUCTS', response.data.products)
+        const response = await api.get("/products?limit=9");
+        commit("SET_PRODUCTS", response.data.products);
       } catch (error) {
-        commit('SET_ERROR', error.message)
+        commit("SET_ERROR", error.message);
       } finally {
-        commit('SET_LOADING', false)
+        commit("SET_LOADING", false);
       }
     },
     async fetchMostBoughtProducts({ commit }) {
-      commit('SET_LOADING', true)
-      commit('SET_ERROR', null)
+      commit("SET_LOADING", true);
+      commit("SET_ERROR", null);
       try {
-        const response = await api.get('/products') 
+        const response = await api.get("/products");
         const sorted = response.data.products
-        .sort((a,b)=>b.rating - a.rating)
-        .slice(0,6);
-        commit('SET_MOST_BOUGHT_PRODUCTS', sorted)
+          .sort((a, b) => b.rating - a.rating)
+          .slice(0, 6);
+        commit("SET_MOST_BOUGHT_PRODUCTS", sorted);
       } catch (error) {
-        commit('SET_ERROR', error.message)
+        commit("SET_ERROR", error.message);
       } finally {
-        commit('SET_LOADING', false)
+        commit("SET_LOADING", false);
       }
-    }
+    },
+    async fetchProductById({ commit }, productId) {
+      commit("SET_LOADING", true);
+      commit("SET_ERROR", null);
+      try {
+        const response = await api.get(`/products/${productId}`);
+        commit("SET_PRODUCT", response.data);
+      } catch (error) {
+        commit("SET_ERROR", error.message);
+      } finally {
+        commit("SET_LOADING", false);
+      }
+    },
   },
   getters: {
     allProducts: (state) => state.products,
-    mostBoughtProducts:(state)=>state.mostBoughtProducts,
+    mostBoughtProducts: (state) => state.mostBoughtProducts,
+    product:(state) => state.product,
     isLoading: (state) => state.loading,
-    error: (state) => state.error
-  }
-}
+    error: (state) => state.error,
+  },
+};
