@@ -52,7 +52,7 @@ npm install
 ```text
 npm run dev
 ```
-DESKTOP IMAGES
+### WEBSITE IMAGES
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20095732.png)
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20100137.png)
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20100154.png)
