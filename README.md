@@ -14,7 +14,13 @@ DESKTOP IMAGES
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100245.png)
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100311.png)
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100311.png)
-![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100321.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100357.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100340.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100333.png)
+![Desktop Image]()
+![Desktop Image]()
+![Desktop Image]()
+![Desktop Image]()
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100333.png)
 
 
