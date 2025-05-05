@@ -85,7 +85,7 @@
                 <!-- Image Section -->
                 <div class="flex-1">
                     <div class="deal_ofthe_week_img">
-                        <img src="/assets/image.png" alt="Deal of the Week" class="w-full rounded-lg shadow-lg" />
+                        <img src="/src/assets/image.png" alt="Deal of the Week" class="w-full rounded-lg shadow-lg" />
                     </div>
                 </div>
 
