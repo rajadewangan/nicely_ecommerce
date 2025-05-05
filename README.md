@@ -34,7 +34,7 @@ src/
 ├── store/          # Vuex store
 ├── App.vue         # Root component
 ├── main.js         # Entry point
-
+```
 
 
 ## 🔧 Setup Instructions
@@ -43,15 +43,15 @@ src/
 ```text
 git clone https://github.com/rajadewangan/nicely_ecommerce
 cd nicely_ecommerce
-
+```
 ### 2. Install Dependencies
 ```text
 npm install
-
+```
 ### 3. Run Development Server
 ```text
 npm run dev
-
+```
 DESKTOP IMAGES
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20095732.png)
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20100137.png)
