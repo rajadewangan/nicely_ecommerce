@@ -1,6 +1,6 @@
 <template>
     <div class="w-full h-screen flex items-center justify-center bg-red-100 bg-right bg-no-repeat  bg-blend-multiply"
-        style="background-image: url('/assets/image.png'); background-color: rgb(162 163 163 / 40%);">
+        style="background-image: url('/images/image.png'); background-color: rgb(162 163 163 / 40%);">
         <div class="container mx-auto  p-8 rounded">
             <div class="flex items-center h-full">
                 <div class="w-full">
@@ -85,7 +85,7 @@
                 <!-- Image Section -->
                 <div class="flex-1">
                     <div class="deal_ofthe_week_img">
-                        <img src="/src/assets/image.png" alt="Deal of the Week" class="w-full rounded-lg shadow-lg" />
+                        <img src="/images/image.png" alt="Deal of the Week" class="w-full rounded-lg shadow-lg" />
                     </div>
                 </div>
 

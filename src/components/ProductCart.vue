@@ -9,7 +9,7 @@
     <!-- Product Image -->
     <div class="p-4">
       <div class="w-full overflow-hidden rounded-md">
-        <img src="/src/assets/image.png" alt="Fujifilm X100T"
+        <img src="/images/image.png" alt="Fujifilm X100T"
           class="w-full h-auto object-cover transition-transform duration-300 hover:scale-105">
       </div>
 
