@@ -1,7 +1,71 @@
-# Vue 3 + Vite
+# NicelyCommerce 
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# 🛒 Vue E-Commerce Project
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
-DESKTOP IMAGES
-![Image description][(https://github.com/username/repository-name/raw/main/path/to/your/image.jpg](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20095732.png)
+A modern and responsive e-commerce web application built with Vue.js. This project provides a seamless shopping experience with features like product browsing, shopping cart, user authentication, order checkout, and more.
+
+live demo - https://nicelycommerce.onrender.com
+
+## 🚀 Features
+- 🛍️ Product listing with filtering and sorting
+- 🔍 Product details page
+- 🛒 Shopping cart functionality
+- 👤 login/register
+- 📦 Order checkout and summary
+- 💬 Customer reviews and ratings
+- 🔄 RESTful API integration
+- 📱 Responsive design for mobile and desktop
+
+  ## 🧱 Tech Stack
+
+- **Frontend:** Vue.js 3, Vue Router, Vuex
+- **Styling:** Tailwind CSS 
+- **API:** dummyjson.com
+- **HTTP Client:** Axios
+- **State Management:** Vuex 
+- **Package Manager:** npm 
+
+## 📁 Project Structure
+
+```text
+src/
+├── assets/         # Images, fonts, etc.
+├── components/     # Reusable components
+├── views/          # Route-based views
+├── router/         # Vue Router configuration
+├── store/          # Vuex store
+├── App.vue         # Root component
+├── main.js         # Entry point
+```
+
+
+## 🔧 Setup Instructions
+
+### 1. Clone the Repository
+```text
+git clone https://github.com/rajadewangan/nicely_ecommerce
+cd nicely_ecommerce
+```
+### 2. Install Dependencies
+```text
+npm install
+```
+### 3. Run Development Server
+```text
+npm run dev
+```
+### WEBSITE IMAGES
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20095732.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20100137.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20100154.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100205.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100218.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100227.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100245.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100254.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100357.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100340.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100333.png)
+
+
+
