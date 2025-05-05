@@ -8,7 +8,8 @@ export default {
       extend: {
         colors:{
           primary:'rgb(239, 68, 68)',
-          secondary:' rgb(247, 212, 13)'
+          secondary:' rgb(247, 212, 13)',
+          background:'rgb(162, 163, 163, 0.4)'
         }
       },
     },

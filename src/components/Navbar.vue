@@ -5,18 +5,27 @@
             <!-- Logo -->
             <div class="text-2xl font-bold text-gray-800">
                 <router-link to="/" class="hover:text-blue-600">
-                    Nicely<span class="text-blue-500">Commerce</span>
+                    Nicely<span class="text-primary">Commerce</span>
                 </router-link>
             </div>
 
             <!-- Navigation Links -->
             <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <router-link to="/" class="text-gray-700 hover:text-blue-600">Home</router-link>
-                <router-link to="/category/category" class="text-gray-700 hover:text-blue-600">Category</router-link>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Promotion</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Pages</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Blog</a>
-                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+                <router-link to="/"
+                    :class="activeMenu === 'home' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'home'">Home</router-link>
+                <router-link :to="{ path: '/', hash: '#category' }"
+                    :class="activeMenu === 'category' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'category'">Category</router-link>
+                <router-link :to="{ path: '/', hash: '#products' }"
+                    :class="activeMenu === 'products' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'products'">Products</router-link>
+                <router-link :to="{ path: '/', hash: '#customers' }"
+                    :class="activeMenu === 'customers' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'customers'">Customers</router-link>
+                <router-link to="/orders"
+                    :class="activeMenu === 'orders' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'orders'">Orders</router-link>
             </nav>
 
             <!-- Icons -->
@@ -34,7 +43,7 @@
                         v-if="searchKeyword.length > 1 && searchSuggestions.length">
                         <ul>
                             <li v-for="(suggestion, index) in searchSuggestions" :key="index"
-                                @click="searchKeyword =suggestion.title; search()"
+                                @click="searchKeyword = suggestion.title; search()"
                                 class="cursor-pointer px-4 py-2 hover:bg-blue-100">
                                 {{ suggestion.title }}
                             </li>
@@ -65,14 +74,24 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div v-if="isOpen" class="md:hidden bg-white px-4 py-3 border-t">
-            <nav class="flex flex-col space-y-2 text-sm font-medium">
-                <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Shop</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Promotion</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Pages</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Blog</a>
-                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+        <div v-if="isOpen" class="md:hidden bg-white px-4 py-3 border-t absolute right-0">
+            <!-- Navigation Links -->
+            <nav class="flex md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-sm font-medium ">
+                <router-link to="/"
+                    :class="activeMenu === 'home' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'home'; isOpen = false">Home</router-link>
+                <router-link :to="{ path: '/', hash: '#category' }"
+                    :class="activeMenu === 'category' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'category'; isOpen = false">Category</router-link>
+                <router-link :to="{ path: '/', hash: '#products' }"
+                    :class="activeMenu === 'products' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'products'; isOpen = false">Products</router-link>
+                <router-link :to="{ path: '/', hash: '#customers' }"
+                    :class="activeMenu === 'customers' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'customers'; isOpen = false">Customers</router-link>
+                <router-link to="/orders"
+                    :class="activeMenu === 'orders' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'orders'; isOpen = false">Orders</router-link>
             </nav>
         </div>
     </header>
@@ -88,6 +107,8 @@ export default {
         return {
             searchKeyword: '',
             debouncefetch: null,
+            activeMenu: 'home',
+            isOpen: false,
         }
     },
     computed: {
@@ -105,13 +126,16 @@ export default {
         }
     },
     methods: {
-        ...mapActions('search', ['fetchSearchSuggestions','clearSuggestions']),
-       async search() {
+        ...mapActions('search', ['fetchSearchSuggestions', 'clearSuggestions']),
+        async search() {
             if (this.searchKeyword.trim()) {
                 this.clearSuggestions();
                 await this.$router.push(`/search/${this.searchKeyword}`);
                 this.searchKeyword = ''
             }
+        },
+        toggleMenu() {
+            this.isOpen = !this.isOpen;
         }
     }
 
