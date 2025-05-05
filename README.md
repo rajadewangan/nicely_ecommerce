@@ -23,16 +23,18 @@ A modern and responsive e-commerce web application built with Vue.js. This proje
 - **State Management:** Vuex 
 - **Package Manager:** npm 
 
-  ## 📁 Project Structure
-  ```text
-  src/
-├── assets/ # Images, fonts, etc.
-├── components/ # Reusable components
-├── views/ # Route-based views
-├── router/ # Vue Router configuration
-├── store/ # Vuex store
-├── App.vue # Root component
-├── main.js # Entry point
+## 📁 Project Structure
+
+```text
+src/
+├── assets/         # Images, fonts, etc.
+├── components/     # Reusable components
+├── views/          # Route-based views
+├── router/         # Vue Router configuration
+├── store/          # Vuex store
+├── App.vue         # Root component
+├── main.js         # Entry point
+
 
 
 ## 🔧 Setup Instructions
