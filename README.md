@@ -40,13 +40,16 @@ src/
 ## 🔧 Setup Instructions
 
 ### 1. Clone the Repository
+```text
 git clone https://github.com/rajadewangan/nicely_ecommerce
 cd nicely_ecommerce
 
 ### 2. Install Dependencies
+```text
 npm install
 
 ### 3. Run Development Server
+```text
 npm run dev
 
 DESKTOP IMAGES
