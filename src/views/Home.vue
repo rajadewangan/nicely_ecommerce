@@ -148,7 +148,7 @@
             style="border-color: rgb(239, 68, 68);">All Products</router-link>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4">
-        <div class="col-span-1" v-for="(product, index) in allProducts" :key="product.id">
+        <div class="col-span-1" v-for="(product) in allProducts" :key="product.id">
             <Product :products="[product]" />
         </div>
     </div>
@@ -257,7 +257,6 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import { mapActions, mapGetters } from 'vuex/dist/vuex.cjs.js';
-import Slider from '../components/Slider.vue'
 import Product from '../components/Product.vue';
 export default {
     name: "Home",
@@ -307,7 +306,6 @@ export default {
 
     },
     components: {
-        Slider,
         Product,
         Swiper,
         SwiperSlide,

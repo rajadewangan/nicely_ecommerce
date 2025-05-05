@@ -53,11 +53,13 @@
 
                 </div>
 
-                <router-link to="/login" class="text-gray-600 hover:text-blue-600">
+                <router-link to="/login" :class="activeMenu === 'login' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                @click="activeMenu = 'login'">
                     <i class="fa fa-user"></i>
                 </router-link>
                 <div class="relative">
-                    <router-link to="/cart" class="text-gray-600 hover:text-blue-600">
+                    <router-link to="/cart" :class="activeMenu === 'cart' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+                    @click="activeMenu = 'cart'">
                         <i class="fa fa-shopping-cart"></i>
                     </router-link>
                     <span

@@ -24,8 +24,6 @@
             <Product :products="[product]" />
         </div>
     </div>
-    <!-- <Slider heading="New Arrivals" />
-    <Slider heading="Top Rated" /> -->
 
     <!-- new arrivals  -->
     <div>
@@ -39,7 +37,7 @@
             768: { slidesPerView: 3 },
             1024: { slidesPerView: 3 }
         }" loop class="w-full">
-            <SwiperSlide v-for="(product, index) in newCategoryProducts" :key="product.id">
+            <SwiperSlide v-for="(product) in newCategoryProducts" :key="product.id">
                 <div class="cursor-pointer px-4 py-2 text-center bg-white text-gray-800 shadow mx-auto w-full ">
                     <Product :products="[product]" />
                 </div>
@@ -51,7 +49,6 @@
 <script>
 import { mapActions, mapGetters } from 'vuex/dist/vuex.cjs.js';
 import Product from '../components/Product.vue';
-import Slider from '../components/Slider.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 
@@ -59,7 +56,6 @@ export default {
     name: "Category",
     components: {
         Product,
-        Slider,
         Swiper,
         SwiperSlide,
     },
@@ -74,9 +70,5 @@ export default {
     methods: {
         ...mapActions('category', ['fetchCategoryproducts', 'fetchNewCategoryProducts']),
     },
-    data() {
-        return {
-
-        }
-    }
+    
 }</script>
