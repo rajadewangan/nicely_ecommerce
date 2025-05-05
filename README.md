@@ -7,5 +7,14 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 DESKTOP IMAGES
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20095732.png)
 ![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20100137.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/raw/main/images/desktop/Screenshot%202025-05-05%20100154.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100205.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100218.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100227.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100245.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100311.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100311.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100321.png)
+![Desktop Image](https://github.com/rajadewangan/nicely_ecommerce/blob/main/images/desktop/Screenshot%202025-05-05%20100333.png)
 
 
