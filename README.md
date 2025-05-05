@@ -4,6 +4,8 @@
 
 A modern and responsive e-commerce web application built with Vue.js. This project provides a seamless shopping experience with features like product browsing, shopping cart, user authentication, order checkout, and more.
 
+live demo - https://nicelycommerce.onrender.com
+
 ## 🚀 Features
 - 🛍️ Product listing with filtering and sorting
 - 🔍 Product details page
