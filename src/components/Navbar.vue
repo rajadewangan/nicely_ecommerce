@@ -4,8 +4,8 @@
 
             <!-- Logo -->
             <div class="text-2xl font-bold text-gray-800">
-                <router-link to="/" class="hover:text-blue-600">
-                    Nicely<span class="text-primary">Commerce</span>
+                <router-link to="/" class="hover:text-primary">
+                    Nicely<span class="text-primary hover:text-black">Commerce</span>
                 </router-link>
             </div>
 
