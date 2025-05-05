@@ -25,7 +25,7 @@
         </div>
 
         <button type="submit"
-          class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold">
+          class="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary-600 transition font-semibold">
           {{ isLogin ? 'Login' : 'Sign Up' }}
         </button>
       </form>

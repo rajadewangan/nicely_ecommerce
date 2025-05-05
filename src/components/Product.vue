@@ -71,7 +71,7 @@
                     </select> -->
                 <!-- Actions -->
                 <button
-                    class="mt-4 px-6 py-2 bg-secondary text-black font-semibold rounded hover:bg-primary-500 transition">
+                    class="mt-4 px-6 py-2 bg-secondary text-black font-semibold rounded hover:shadow-lg hover:border transition">
                     Add to Cart
                 </button>
             </div>
