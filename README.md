@@ -24,6 +24,7 @@ A modern and responsive e-commerce web application built with Vue.js. This proje
 - **Package Manager:** npm 
 
   ## 📁 Project Structure
+  ```text
   src/
 ├── assets/ # Images, fonts, etc.
 ├── components/ # Reusable components
