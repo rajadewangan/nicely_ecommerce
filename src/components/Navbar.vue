@@ -74,9 +74,9 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div v-if="isOpen" class="md:hidden bg-white px-4 py-3 border-t absolute right-0">
+        <div v-if="isOpen" class="md:hidden bg-white px-4 py-3 border-t absolute right-0 z-50">
             <!-- Navigation Links -->
-            <nav class="flex md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-sm font-medium ">
+            <nav class="flex md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-sm font-medium z-50">
                 <router-link to="/"
                     :class="activeMenu === 'home' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
                     @click="activeMenu = 'home'; isOpen = false">Home</router-link>

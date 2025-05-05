@@ -9,7 +9,7 @@
             :class="{'translate-x-0':isFilterOpen,'translate-x-full':!isFilterOpen && !isDesktop}">
             <SearchFilter />
             <div class="flex justify-end md:hidden">
-                <button @click="isFilterOpen" class="text-gray-600 hover:text-red-600 text-xl font-bold">
+                <button @click="isFilterOpen =false" class="text-gray-600 hover:text-red-600 text-xl font-bold">
                     &times;
                 </button>
             </div>

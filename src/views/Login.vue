@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-100">
-    <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
+  <div class="min-h-screen flex justify-center bg-gray-100">
+    <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md my-auto">
       <h2 class="text-2xl font-bold mb-6 text-center">
         {{ isLogin ? 'Login to Your Account' : 'Create an Account' }}
       </h2>
