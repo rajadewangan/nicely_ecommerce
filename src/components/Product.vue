@@ -1,12 +1,12 @@
 <template>
-    <div :class="`gap-4 bg-gray-100 py-2 shadow-sm mb-4 px-2`" v-for="product in products" :key="product.id">
+    <div :class="`gap-4 bg-gray-100 py-2 shadow-sm mb-4 px-2 border hover:shadow-lg transition-shadow hover:border-black`" v-for="product in products" :key="product.id">
 
         <div class="col-span-1 h-64 overlow-hidden flex item-center justify-center">
             <img :src="product.thumbnail" alt="Product Img" class="h-full w-auto object-cover">
         </div>
         <div class="col-span-2 text-start">
             <router-link :to="`/product/${product.id }`">
-                <h3 class="font-bold text-4xl">{{ product.title }}</h3>
+                <h3 class="font-bold text-3xl">{{ product.title }}</h3>
             </router-link>
             <h4>{{ product.brand }}</h4>
             <!-- Rating -->
